@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moluculination</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Moluculination</h1>
+        <form action="/molecule" method="get" id="form">
+            <label for="molecule-range">Adjust Molecule Complexity:</label>
+            <p>Value: <span id="slider-value">50</span></p>
+            <input type="range" id="molecule-range" name="complexity" min="1" max="100" value="50" class="slider">
+            <button type="submit">Submit</button>        
+        </form>
+        <div id="loadingScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); z-index: 9999;" class="d-none">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <div>Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div>
+                <progress></progress> <!-- Optional: You can replace this with a custom progress bar if needed -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>

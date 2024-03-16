@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 80%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #e6e6e6;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 50px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #2c3e50;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background: #3498db;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #2980b9;
+}
+
+.slider:active::-webkit-slider-thumb {
+  background: #2980b9;
+}
+
+.slider-value {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #3498db;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#value {
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+
+
+.dot {
+  opacity: 0;
+  /* Start fully transparent */
+  animation: dotFade 1.4s infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotFade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.d-none {
+  display: none;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moluculination</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+    <script>
+    window
+      .initRDKitModule()
+      .then(function (RDKit) {
+        console.log("RDKit version: " + RDKit.version());
+        window.RDKit = RDKit;
+        drawmol()
+      })
+      .catch(() => {
+      });
+  </script>
+
+  <script> const drawmol = () => {
+
+    const mol = RDKit.get_mol(`<%- smiles %>`);
+    const svg = mol.get_svg();
+    document.getElementById("drawer").innerHTML = svg;         
+    };
+    </script>
+</head>
+
+<body>
+  <button style="position:fixed"; right:0; bottom:0><a href="/">Home</a></button>
+
+<div id='drawer'></div>
+
+<script src="/js/molecule.js"></script>
+</body>
+</html>
