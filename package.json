@@ -2,8 +2,9 @@
   "name": "molucination",
   "version": "1.0.0",
   "description": "Molecule Generator",
-  "main": "index.js",
+  "main": "node app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "node app.js"
   },
   "author": "Jaiveer Gill",
