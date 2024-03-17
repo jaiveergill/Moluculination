@@ -35,8 +35,9 @@ app.get('/molecule', (req, res) => {
     console.log('Pipe data from python script ...');
     dataToSend = data.toString();
   });
-  // in close event we are sure that stream from child process is closed
-  python.on('close', (code) => {
+
+
+  python.on('close', (code, err) => {
     console.log(`child process close all stdio with code ${code}`);
     // send data to browser
     res.render('molecule.ejs', {
@@ -44,9 +45,12 @@ app.get('/molecule', (req, res) => {
     })
   });
 
-  python.on('error', (err) => {
-    console.log("Error: ", err)
-  })
+  if (python.stderr !== null) {
+    python.stderr.on('data', (data) => {
+      console.log(data.toString());
+    });
+  }
+
 });
 
 const port = process.env.PORT || 3000;
