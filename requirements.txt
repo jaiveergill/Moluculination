@@ -1,0 +1,4 @@
+torch
+rdkit-pypi
+pandas
+numpy
