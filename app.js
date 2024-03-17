@@ -43,9 +43,13 @@ app.get('/molecule', (req, res) => {
       smiles: dataToSend
     })
   });
+
+  python.on('error', (err) => {
+    console.log("Error: ", err)
+  })
 });
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log('CORS-enabled web server listening on port 80')
+  console.log(`CORS-enabled web server listening on port ${port}`)
 })
