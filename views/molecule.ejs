@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moluculination</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moluculination</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+  <script>
     window
       .initRDKitModule()
       .then(function (RDKit) {
@@ -14,24 +15,25 @@
         window.RDKit = RDKit;
         drawmol()
       })
-      .catch(() => {
-      });
+      .catch(() => {});
   </script>
 
-  <script> const drawmol = () => {
+  <script>
+    const drawmol = () => {
 
-    const mol = RDKit.get_mol(`<%- smiles %>`);
-    const svg = mol.get_svg();
-    document.getElementById("drawer").innerHTML = svg;         
+      const mol = RDKit.get_mol(`<%- smiles %>`);
+      const svg = mol.get_svg();
+      document.getElementById("drawer").innerHTML = svg;
     };
-    </script>
+  </script>
 </head>
 
 <body>
-  <button style="position:fixed"; right:0; bottom:0><a href="/">Home</a></button>
+  <button style="position:absolute; top:0px; left:0px"><a href="/">Home</a></button>
 
-<div id='drawer'></div>
+  <div id='drawer'></div>
 
-<script src="/js/molecule.js"></script>
+  <script src="/js/molecule.js"></script>
 </body>
+
 </html>
