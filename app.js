@@ -39,6 +39,7 @@ app.get('/molecule', (req, res) => {
 
   python.on('close', (code, err) => {
     console.log(`child process close all stdio with code ${code}`);
+    console.log(dataToSend)
     // send data to browser
     res.render('molecule.ejs', {
       smiles: dataToSend
